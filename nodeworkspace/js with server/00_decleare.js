@@ -3,7 +3,7 @@
 console.log(x);
 
 x=5;
-console.log(x);//r
+console.log(x);//rre
 
 var x = 7;
 console.log(x);
