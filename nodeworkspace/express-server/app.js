@@ -9,7 +9,7 @@ app.listen(5000, ()=>{
 })
 /*
  content-type |express 
- Get + QueryString  | requset.query
+ Get + QueryString  | requset.query  
  Post + QueryString | request.body
  JSON               | request.body
  경로에 값을 전달   | request.params
