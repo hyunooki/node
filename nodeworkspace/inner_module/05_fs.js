@@ -1,9 +1,9 @@
 //05_fs.js
 const fs = require('fs');
 
-const data = 'Hello,World!!';
+const data = '가가가가';
 
-fs.writeFile('./sample.txt',data,'latin1',
+fs.writeFile('./sample.txt',data,'utf-8',
          (err)=>{
           if(err){
             throw err;
