@@ -8,7 +8,7 @@ app.listen(5000, ()=>{
   console.log('http://localhost:5000')
 })
 /*
- content-type |express
+ content-type |express 
  Get + QueryString  | requset.query
  Post + QueryString | request.body
  JSON               | request.body
