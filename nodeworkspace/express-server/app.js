@@ -23,14 +23,11 @@ app.use(express.json());
 
 let empRouter = require('./router/emp_router.js');
 app.use('/',empRouter);
-
+const path = require('path');
 //Error handler
-app.use(function(err,req,res,next){
-  // res.status(500).json({statusCode : res.statusCode,
-  //                       errMessage: res.errMessage
-  // })
-  // res.status(500).sendFile('error.html')
-})
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, 'error.html'));
+});
 app.get('/error',(req,res,next)=>{
   next(new Error('Process Fail! check Data'))
 })

@@ -5,10 +5,11 @@ const app = express();
 const session = require('express-session');
 const cors = require('cors');
 const { options } = require('./router/emp_router');
+
 app.listen(3000,()=>{
   console.log('http://localhost:3000');
 });
-
+//세션설정
 let sessionSettion = session({
   secret : '@$@)_TQWATI)_QW%Q^TEWYJIOWE!_$#!@$()',
   resave :false,
@@ -21,13 +22,14 @@ let sessionSettion = session({
     maxAge : 60000
   }
 })
+//세션활용
 app.use(sessionSettion)
 //반환값을 어떻게 해야하는지 미들웨어를 활용해야함
 app.use(express.json());
 //1)CORS 모든 정책 활용
 //app.use(cors());
 
-//2)
+//2) 부분 CORS 정책 활용 
  const corsOption={
   origin :'http://192.168.0.28:5500',
   optionsSuccessStatus :200
