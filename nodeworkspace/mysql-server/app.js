@@ -1,5 +1,7 @@
 //app.js
+//env 연결
 require('dotenv').config({path:'./mapper/dbConfig.env'})
+//express작동
 const express = require('express')
 const app = express();
 //미들웨어 

@@ -1,6 +1,5 @@
 // router/customer_router.js
 //라우터 모듈
-
 const express = require('express');
 const router = express.Router();
 const custService = require('../service/customer_service.js')
