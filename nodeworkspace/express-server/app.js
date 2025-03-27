@@ -16,7 +16,7 @@ app.listen(5000, ()=>{
 */
 //미들웨어 등록
 // application/x-www-form-urlencoded
-//extended는 중첩여부를 확인 예를들어 객체타입을 할거냐 말거냐
+//extended는 중첩객체타입 여부를 확인
 app.use(express.urlencoded({extended :false}))
 // application/json
 app.use(express.json());

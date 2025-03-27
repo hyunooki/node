@@ -46,6 +46,7 @@ app.post('/login',(req,res)=>{
     res.send(req.session)
   })
 })
+//세션값 전달하기
 app.get('/',(req,res)=>{
   res.send(req.session.user)
 })

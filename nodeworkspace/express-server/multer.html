@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 단건 -->
+  <form name="singleForm">
+    <input type="file" name="avatar">
+    <button type="button">전송</button>
+  </form>
+  <!-- 다중 -->
+  <form name="multipleForm">
+    <input type="file" name="photos" multiple>
+    <button type="button">전송</button>
+  </form>
+  <script>
+    singleForm.querySelector('button')
+      .addEventListener('click', function (e) {
+        //formData 는 formData안에있는 데이터 전체를 해당 클래스를 담아서 보낸다.
+        let formData = new FormData(singleForm);
+
+        fetch('http://localhost:5000/profile', {
+            method: 'post',
+            body: formData,
+          })
+          .then(res => res.json())
+          .then(result => {
+            console.log(result)
+          })
+          .catch(err => console.log(err))
+      })
+
+      //다중 등록
+      multipleForm.querySelector('button')
+      .addEventListener('click', function (e) {
+        //formData 는 formData안에있는 데이터 전체를 해당 클래스를 담아서 보낸다.
+        let formData = new FormData(multipleForm);
+
+        fetch('http://localhost:5000/photos', {
+            method: 'post',
+            body: formData,
+          })
+          .then(res => res.json())
+          .then(result => {
+            console.log(result)
+          })
+          .catch(err => console.log(err))
+      })
+  </script>
+</body>
+
+</html>
