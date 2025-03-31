@@ -11,20 +11,11 @@ const empById = async(empId) => {
 }
 //등록
 const empAdd = async(empInfo) => {
-  let columnList = Object.keys(empInfo);
-  let addInfo = convertAry(empInfo,columnList);
+  let addInfo = Object.values(empInfo);
   let result = await mariaDB.query('insertEmp',addInfo)
   return result;
 }
-//객체를 배열로
-const convertAry = (target,list) => {
-  let array =[];
-  for(let filed of list){
-    let val = target[filed]
-    array.push(val)
-  }
-  return array;
-}
+
 //수정
 const modifyEmp = async(empInfo,empId) => {
   let updateInfo = [empInfo,empId];
