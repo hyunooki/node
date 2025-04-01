@@ -6,6 +6,8 @@
     <!-- 이름을 활용해서 불러오는법 -->
     <router-link :to="{name: 'for'}">For</router-link> |
     <router-link to="/if">if</router-link> |
+    <router-link :to="{name: 'eventView'}">eventView</router-link> |
+    <router-link :to="{name: 'comWatView'}">comWatView</router-link> |
   </nav>
   <router-view/>
   <!-- <hr> -->

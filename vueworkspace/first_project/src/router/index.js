@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import DataBinding from '@/views/DataBinding.vue'
 import ForView from '@/views/ListBinding.vue'
 import IfView from '@/views/IfBinding.vue'
+import OnEventView from '@/views/OnEvent.vue'
+import ComWatView from '@/views/ComputedWatch.vue'
 
 const routes = [
   {
@@ -32,9 +34,19 @@ const routes = [
     path:'/if',
     name: 'if',
     component:IfView
+  },
+  {
+    path:'/eventView',
+    name:'eventView',
+    component:OnEventView
+  },
+  {
+    path:'/comWatView',
+    name:'comWatView',
+    component : ComWatView
   }
 ]
-
+// vue router를 생성하는 함수 = createRouter
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
