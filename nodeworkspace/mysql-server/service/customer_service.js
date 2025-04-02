@@ -15,7 +15,6 @@ const findByid = async(custId) =>{
 };
 //등록
 const addCustomer = async(custInfo) => {
-  console.log("제이슨"+json);
   let columnList = ['name','email','phone','address'];
   let addInfo = converterAray(custInfo,columnList);
   let result = await mariaDB.query('insertInfo',addInfo);
